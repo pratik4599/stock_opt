@@ -1,6 +1,6 @@
 # stock_opt
 
-#endpoints
+# endpoints
 
 "https://optstk.herokuapp.com/get_fut?statename="
 to open stock future chart
