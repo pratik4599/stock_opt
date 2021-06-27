@@ -4,11 +4,9 @@ from flask import Flask, render_template, redirect, request, session
 
 app = Flask(__name__)
 
-# stuff that needs to be manually changed
+# 
 # in show.html need to change month in each table
 exp_date_zerodha = '2021-07-29'  
-
-
 
 def create_url_for_options(row):
     final_url = "https://kite.zerodha.com/chart/ext/tvc/NFO-OPT/" + \
