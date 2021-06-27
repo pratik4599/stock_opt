@@ -14,6 +14,8 @@ to see near atm option strikes for particular stock
 
 # excel macros to call backend
 
+```
+
  Public interval As Double
 Sub futlink()
 
@@ -46,4 +48,6 @@ For Each rng In Selection
         End If
     Next rng
 End Sub
+
+```
 
