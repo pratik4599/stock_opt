@@ -1,4 +1,4 @@
- import pandas as pd
+import pandas as pd
 from flask import Flask, render_template, redirect, request, session
 
 
@@ -109,11 +109,11 @@ def fut():
     
     statename = request.args.get('statename')
     print(statename)
-   
-    ans = df2.loc[df2['url'].str.contains(statename, case=False)]
-    lis = ans['url'].tolist()
-    print(lis[0])
-    req_url = lis[0]
+    statename = statename.upper()    
+    ans = df2.loc[df2['name'] == statename]
+    ans = ans['url'].tolist()
+    ans = ans[0]
+    req_url = ans
 
     return redirect(req_url)
 
@@ -130,11 +130,14 @@ def spot():
     
     statename = request.args.get('statename')
     print(statename)
+    statename = statename.upper()
    
-    ans = df2.loc[df2['url'].str.contains(statename, case=False)]
-    lis = ans['url'].tolist()
-    print(lis[0])
-    req_url = lis[0]
+    ans = df2.loc[df2['tradingsymbol'] == statename]
+    ans = ans['url'].tolist()
+    print("created ans is ")
+    print(ans)
+    ans = ans[0]
+    req_url = ans
 
     return redirect(req_url)
 
