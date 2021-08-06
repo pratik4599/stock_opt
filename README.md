@@ -52,6 +52,7 @@ End Sub
 ```
 
 # open in mozilla
+```
 Sub _links()
  
 Dim objShell
@@ -71,3 +72,4 @@ For Each rng In Selection
     Next rng
 
 End Sub
+```
