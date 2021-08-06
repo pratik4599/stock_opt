@@ -51,3 +51,23 @@ End Sub
 
 ```
 
+# open in mozilla
+Sub _links()
+ 
+Dim objShell
+Dim strURL As String, fixedURL As String
+fixedURL = "https://optstk.herokuapp.com/get_fut?statename="
+
+Set objShell = CreateObject("WScript.Shell")
+
+
+For Each rng In Selection
+        If rng.Value <> 0 Then
+        strURL = fixedURL & rng
+        'ThisWorkbook.FollowHyperlink StrURL
+        objShell.Run ("""C:\Program Files\Mozilla Firefox\Firefox.exe""" & strURL)
+        Application.Wait (Now + TimeValue("00:00:01"))
+        End If
+    Next rng
+
+End Sub
